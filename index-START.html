@@ -7,6 +7,22 @@
 </head>
 <body>
 <script>
+  const pressed = [];
+  const secretCode = 'lauren';
+  window.addEventListener("keyup", e => {
+    //when someone presses a button we want to store in an array
+    console.log(e.key);
+    pressed.push(e.key);
+    //want to count from end of array to just get the number of items equal to our secret code
+    //- makes it go from back
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    console.log(pressed);
+    //check if array contains our code
+    //.join makes it a string
+    if (pressed.join('').includes(secretCode)) {
+      console.log("WINNER WINNER CHX DIN DIN");
+    }
+  });
 </script>
 </body>
 </html>
